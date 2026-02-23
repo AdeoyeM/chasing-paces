@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This running app is to help runners achieve their goal pace and reach their race times by using simple calculations, training zones and music suggestions.
 
 ## Getting Started
 
