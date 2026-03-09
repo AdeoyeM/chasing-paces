@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Calculator as CalcIcon, RotateCcw } from "lucide-react";
 import { PaceData } from "../types/pace";
 
@@ -30,22 +30,31 @@ export default function Calculator({
   onReset,
   onCalculate,
 }: CalculatorProps) {
-  const [distance, setDistance] = useState<string>("");
-  const [hours, setHours] = useState<string>("");
-  const [minutes, setMinutes] = useState<string>("");
-  const [seconds, setSeconds] = useState<string>("");
-  const [unit, setUnit] = useState<"km" | "mile">("km");
-
-  useEffect(() => {
+  const [distance, setDistance] = useState<string>(initialData?.distance || "");
+  const [hours, setHours] = useState<string>(() => {
     if (initialData) {
-      setDistance(initialData.distance);
-      const [h, m, s] = initialData.goalTime.split(":");
-      setHours(h || "");
-      setMinutes(m || "");
-      setSeconds(s || "");
-      setUnit(initialData.unit);
+      const [h] = initialData.goalTime.split(":");
+      return h || "";
     }
-  }, [initialData]);
+    return "";
+  });
+  const [minutes, setMinutes] = useState<string>(() => {
+    if (initialData) {
+      const [, m] = initialData.goalTime.split(":");
+      return m || "";
+    }
+    return "";
+  });
+  const [seconds, setSeconds] = useState<string>(() => {
+    if (initialData) {
+      const [, , s] = initialData.goalTime.split(":");
+      return s || "";
+    }
+    return "";
+  });
+  const [unit, setUnit] = useState<"km" | "mile">(
+    (initialData?.unit as "km" | "mile") || "km",
+  );
 
   const handleUnitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newUnit = e.target.value as "km" | "mile";
