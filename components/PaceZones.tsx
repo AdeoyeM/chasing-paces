@@ -104,7 +104,7 @@ export function PaceZones({ paceData }: PaceZonesProps) {
                     <span className="text-2xl font-bold text-white">
                       {formatPace(zone.max)}
                     </span>
-                    <span className="text-sm text-neutral-400">/km</span>
+                    <span className="text-sm text-neutral-400">/{paceData.unit}</span>
                   </div>
                 </div>
               </div>
