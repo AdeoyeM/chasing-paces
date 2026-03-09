@@ -106,9 +106,27 @@ export default function Calculator({
     const pacePerKmSeconds = totalSeconds / distanceInKm;
     const pacePerMileSeconds = totalSeconds / distanceInMiles;
 
+    //alert unreasonable pace
     if (pacePerKmSeconds < 120) {
       alert("Pace seems unrealistic. Please check your distance and time");
       return;
+    }
+
+    // Warning system instead of blockings
+    if (pacePerKmSeconds < 180) {
+      // 3:00/km
+      const proceed = confirm(
+        "That's a very fast pace (faster than most competitive runners). Continue anyway?",
+      );
+      if (!proceed) return;
+    }
+
+    if (pacePerKmSeconds > 900) {
+      // 15:00/km
+      const proceed = confirm(
+        "That's a very slow pace (slower than typical jogging). Continue anyway?",
+      );
+      if (!proceed) return;
     }
 
     const goalTime = `${h.toString().padStart(2, "0")}:${m
