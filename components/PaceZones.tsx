@@ -1,6 +1,6 @@
 import React from 'react';
 import { Zap, Gauge, TrendingUp } from 'lucide-react';
-import { PaceData } from '../App';
+import { PaceData } from '../types/pace';
 
 interface PaceZonesProps {
   paceData: PaceData;
@@ -13,7 +13,7 @@ function formatPace(totalSeconds: number): string {
 }
 
 export function PaceZones({ paceData }: PaceZonesProps) {
-  const targetPace = paceData.targetPacePerKm;
+  const targetPace = paceData.unit === 'km' ? paceData.targetPacePerKm : paceData.targetPacePerMile;
 
   // Training zones based on target pace
   const easyPace = {
@@ -34,7 +34,8 @@ export function PaceZones({ paceData }: PaceZonesProps) {
   const zones = [
     {
       name: 'Easy Run',
-      description: 'Recovery and base building',
+      effort: '60-75',
+      description: 'Recovery and base building. Build endurance and recover between hard sessions.You should be able to hold a conversation.',
       icon: Gauge,
       color: 'from-green-600 to-emerald-500',
       borderColor: 'border-green-500/30',
@@ -44,7 +45,8 @@ export function PaceZones({ paceData }: PaceZonesProps) {
     },
     {
       name: 'Tempo Run',
-      description: 'Comfortably hard, sustained effort',
+      effort: '85-90',
+      description: 'Comfortably hard, sustained effort. Improves lactate threshold and race endurance.',
       icon: TrendingUp,
       color: 'from-orange-600 to-amber-500',
       borderColor: 'border-orange-500/30',
@@ -54,7 +56,8 @@ export function PaceZones({ paceData }: PaceZonesProps) {
     },
     {
       name: 'Interval Training',
-      description: 'High intensity, short bursts',
+      effort: '95-100',
+      description: 'High intensity, short bursts. with rest between. Builds speed and VO2 max.',
       icon: Zap,
       color: 'from-red-600 to-pink-500',
       borderColor: 'border-red-500/30',
@@ -68,8 +71,12 @@ export function PaceZones({ paceData }: PaceZonesProps) {
     <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-6 sm:p-8">
       <div className="mb-6">
         <h2 className="mb-2">Training Pace Zones</h2>
-        <p className="text-sm text-neutral-400">
-          Target Pace: <span className="text-white font-semibold">{formatPace(targetPace)}</span> /km
+        <p className="text-sm text-neutral-400 mb-2">
+          Target Pace: <span className="text-white font-semibold">{formatPace(targetPace)}</span> /{paceData.unit}
+        </p>
+        <p className="text-neutral-400 text-sm mb-6">
+            Train at different intensities to build endurance, speed, and race readiness. 
+            Each zone serves a specific purpose in your training.
         </p>
       </div>
 
@@ -87,6 +94,7 @@ export function PaceZones({ paceData }: PaceZonesProps) {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="mb-1">{zone.name}</h3>
+                  <h4 className="mb-1 text-neutral-400">{zone.effort}% Effort</h4>
                   <p className="text-xs text-neutral-400 mb-3">{zone.description}</p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-2xl font-bold text-white">

@@ -4,4 +4,5 @@ export interface PaceData {
   goalTime: string;
   targetPacePerKm: number;
   targetPacePerMile: number;
+  unit: "km" | "mile";
 }
