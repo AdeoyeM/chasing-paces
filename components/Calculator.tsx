@@ -286,6 +286,7 @@ export default function Calculator({
           </button>
           <button
             type="reset"
+            aria-label="Reset form"
             className="bg-black/40 border border-white/20 hover:border-white/40 text-neutral-400 hover:text-white py-3 px-4 rounded-xl transition-all"
           >
             <RotateCcw className="w-5 h-5" />

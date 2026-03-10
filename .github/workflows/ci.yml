@@ -25,6 +25,9 @@ jobs:
 
       - name: TypeScript type check
         run: npx tsc --noEmit
+
+      - name: Run tests
+        run: npm test -- --coverage
       
       - name: Build project
         run: npm run build
