@@ -206,7 +206,7 @@ export default function Calculator({
           </div>
 
           {/* Quick Select Buttons */}
-          <div className="grid grid-cols-4 gap-2 mt-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
             {commonDistances.map((d) => (
               <button
                 key={d.value}
@@ -286,6 +286,7 @@ export default function Calculator({
           </button>
           <button
             type="reset"
+            aria-label="Reset form"
             className="bg-black/40 border border-white/20 hover:border-white/40 text-neutral-400 hover:text-white py-3 px-4 rounded-xl transition-all"
           >
             <RotateCcw className="w-5 h-5" />
