@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react'
 
 describe('PaceZones Component', () => {
     const mockPaceData: PaceData = {
-        distance: 10,
+        distance: "10",
         goalTime: '00:50:00',
         targetPacePerKm: 300,
         targetPacePerMile: 483,
