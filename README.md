@@ -66,22 +66,22 @@ Framework:
 
 ## Installation
 
-**1. Prerequisites:**
+**Prerequisites:**
 - Node.js 18+ 
 - npm or yarn
 
 For installation, run the following steps:
 
-**2. Clone the repository**
+**1. Clone the repository**
 ``` git clone https://github.com/YOUR_USERNAME/chasing-paces.git ```
 
-**3. Navigate to project directory**
+**2. Navigate to project directory**
 ``` cd chasing-paces ```
 
-**4. Install dependencies**
+**3. Install dependencies**
 ``` npm install ```
 
-**5. Then, run the development server**
+**4. Then, run the development server**
 ``` npm run dev ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -104,7 +104,7 @@ View kilometer-by-kilometer or mile-by-mile splits for your race distance to hel
 **🎵 BPM Suggestions**
 Get music tempo (beats per minute) recommendations that match your target pace to stay motivated and maintain rhythm.
 
-**Backend and database implementation**
+**📊 Backend and database implementation**
 The app calculation logic will remain client side for instant results. 
 However, there will be a backend implementation for saving users results.
 
