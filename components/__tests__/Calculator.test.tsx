@@ -232,7 +232,7 @@ describe('Calculator Component', () => {
 
   it('loads initial data correctly', () => {
     const initialData: PaceData = {
-      distance: 10,
+      distance: "10",
       goalTime: '01:30:00',
       targetPacePerKm: 540,
       targetPacePerMile: 869,
