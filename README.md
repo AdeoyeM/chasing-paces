@@ -7,13 +7,27 @@ ChasingPaces helps runners bridge the gap between having a race goal and knowing
 
 This app solves that by converting race goals into clear, actionable pacing guidance.
 
-**Desktop:**
-<img width="2680" height="1612" alt="image" src="https://github.com/user-attachments/assets/dff486ca-bfc8-4672-b40e-5668f5261824" />
+## 🚀 Quick Start
 
-**Mobile**
-<img width="798" height="1490" alt="image" src="https://github.com/user-attachments/assets/708b670f-72fa-4be1-a3cf-3af3ff2754a2" />
-<img width="798" height="1452" alt="image" src="https://github.com/user-attachments/assets/910475ff-9d53-41d3-a255-b87e98a0e79e" />
-<img width="780" height="1486" alt="image" src="https://github.com/user-attachments/assets/cb9d2d0c-6a35-4ef2-aac0-f0c5f717da35" />
+**Try it live:** [[Chasing Paces](https://chasing-paces.vercel.app/)]
+
+1. Select your race distance (or enter a custom distance)
+2. Enter your goal time (hours, minutes, seconds)
+3. Choose kilometers or miles
+4. Click "Calculate"
+5. View your target pace, training zones, splits, and BPM guidance
+
+## Screenshots
+
+### Desktop View
+<img src="https://github.com/user-attachments/assets/dff486ca-bfc8-4672-b40e-5668f5261824" alt="Desktop Calculator" width="800"/>
+
+### Mobile View
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/708b670f-72fa-4be1-a3cf-3af3ff2754a2" alt="Mobile Calculator" width="250"/>
+  <img src="https://github.com/user-attachments/assets/910475ff-9d53-41d3-a255-b87e98a0e79e" alt="Mobile Results" width="250"/>
+  <img src="https://github.com/user-attachments/assets/cb9d2d0c-6a35-4ef2-aac0-f0c5f717da35" alt="Mobile Zones" width="250"/>
+</p>
 
 ## Features
 
@@ -84,13 +98,13 @@ npm test:watch   # Run tests in watch mode
 ## Future phases
 For V2 and above, there are plans to implement the following:
 
-***📊 Split Times Table**
+**📊 Split Times Table**
 View kilometer-by-kilometer or mile-by-mile splits for your race distance to help you pace on race day.
 
-***🎵 BPM Suggestions***
+**🎵 BPM Suggestions**
 Get music tempo (beats per minute) recommendations that match your target pace to stay motivated and maintain rhythm.
 
-***Backend and database implementation**
+**Backend and database implementation**
 The app calculation logic will remain client side for instant results. 
 However, there will be a backend implementation for saving users results.
 
