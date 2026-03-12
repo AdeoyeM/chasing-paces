@@ -206,7 +206,7 @@ export default function Calculator({
           </div>
 
           {/* Quick Select Buttons */}
-          <div className="grid grid-cols-4 gap-2 mt-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
             {commonDistances.map((d) => (
               <button
                 key={d.value}
